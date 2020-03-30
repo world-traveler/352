@@ -136,8 +136,7 @@ characters in the input buffer. This does not provide maximum concurrency.
 
 Example:
 Here are some example input files and their corresponding output files.
-
-cmd> encrypt infile1 outfile1
+> encrypt infile1 outfile1
 Enter buffer size: 5
 Input file contains
 A: 55
@@ -145,7 +144,7 @@ Output file contains
 A: 18
 B: 19
 Z: 18
-cmd> encrypt infile2 outfile2
+> encrypt infile2 outfile2
 Enter buffer size: 1000
 Input file contains
 A: 14
@@ -170,6 +169,7 @@ U: 6
 V: 1
 Y: 2
 Z: 1
+
 Output file contains
 A: 6
 B: 8
