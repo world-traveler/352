@@ -1,13 +1,13 @@
 # 352
 
 
-Project 2 Prep
+Project 2 Prep:
 In this project you will synchronize multiple threads. The project must be written in C, and must
 use the Pthreads library. As you will see, some aspects of the project are not specified; it will be
 your responsibility to take whatever steps you feel are appropriate to complete the task.
 
 
-Overview
+Overview:
 The purpose of this project is to implement a multi-threaded text file encryptor. Conceptually,
 the function of the program is simple: to read characters from the input file, encrypt the letters,
 and write the encrypted characters to the output file. Also, the encryption program counts the
@@ -35,12 +35,12 @@ the man pages for the following.
 
 
 Required Features
-makefile
+makefile:
 You get 5 points for simply using a makefile. Name your source files whatever you like. Please
 name your executable encrypt. Be sure that "make" will build your executable.
 
 
-Documentation
+Documentation:
 If you have more than one source file, then you must submit a Readme file containing a brief
 explanation of the functionality of each source file. Each source file must also be welldocumented. 
 There should be a paragraph or so at the beginning of each source file describing the code; functions 
@@ -48,7 +48,7 @@ and data structures should also be explained. Basically, another programmer shou
 your code from the comments.
 
 
-Main thread
+Main thread:
 The main thread does the following.
 1. Obtain the input and output files from the command line. If the number of command line
 arguments is incorrect, exit after displaying a message about correct usage.
@@ -62,7 +62,7 @@ capable of holding exactly N characters for the input and output buffers.
 6. Display the number of occurrences of each letter in the input and output files.
 
 
-reader thread
+reader thread:
 The reader thread is responsible for reading from the input file (specified by the first argument
 on the command line) one character at a time, and placing the characters in the input buffer. Each
 buffer item corresponds to a character. Note that the reader thread may need to block until other
@@ -71,7 +71,7 @@ cannot be overwritten until the encryptor thread and the input counter thread ha
 character. The reader continues until the end of the input file is reached.
 
 
-writer thread
+writer thread:
 The writer thread is responsible for writing the encrypted characters in the output buffer to the
 output file (specified by the second argument on the command line). Note that the writer may
 need to block until an encrypted character is available in the buffer. The writer continues until it
@@ -79,7 +79,7 @@ has written the last encrypted character. (Hint: the special character EOF will 
 middle of an input file.)
 
 
-encryption thread
+encryption thread:
 The encryption thread consumes one character at a time from the input buffer, encrypts it, and
 places it in the output buffer. The encryption algorithm to use is given below. Of course, the
 encryption thread may need to wait for an item to become available in the input buffer, and for a
@@ -111,19 +111,19 @@ Encrypted file: Ugit hs (qqoczbmx)
 ebry 2 dqadj.
 
 
-input counter thread
+input counter thread:
 The input counter thread simply counts occurrences of each letter in the input file by looking at
 each character in the input buffer. Of course, the input counter thread will need to block if no
 characters are available in the input buffer.
 
 
-output counter thread
+output counter thread:
 The output counter thread simply counts occurrences of each letter in the output file by looking
 at each character in the output buffer. Of course, the output counter thread will need to block if
 no characters are available in the output buffer.
 
 
-Synchronization Requirement
+Synchronization Requirement:
 Your program should achieve maximum concurrency. That is, you should allow different
 threads to operate on different buffer slots concurrently. For example, when the reader thread is
 placing a character in slot 5 of the input buffer, the encryption thread may process the character
@@ -134,7 +134,7 @@ input buffer, and then let the input counter thread and the encryption thread co
 characters in the input buffer. This does not provide maximum concurrency.
 
 
-Example
+Example:
 Here are some example input files and their corresponding output files.
 > encrypt infile1 outfile1
 Enter buffer size: 5
